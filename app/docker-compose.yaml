@@ -1,0 +1,13 @@
+version: '1'
+services:
+  dev:
+    image: nlp-a1:latest
+    ports:
+      - "8000:8000"
+    build:
+      context: .
+      dockerfile: .Dockerfile
+    volumes:
+      - ./:/root/source_code
+      - ./.vscode-server:/root/.vscode-server
+    command: python3 app.py
